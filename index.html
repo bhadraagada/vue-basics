@@ -14,6 +14,12 @@
         <h2>{{ title }}</h2>
         <h3>{{ driver1 }}</h3>
         <h3>{{ driver2 }}</h3>
+        <h4>{{ points }}</h4>
+
+        <button v-on:click="points++">Increment the points</button><br>
+        <button v-on:click="points--">Decrement the points</button>
+
+        <div @click="changeDriver('Lewis')"><button>change the driver plssssss</button></div>
     </div>
 
     <script src="app.js"></script>
