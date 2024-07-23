@@ -2,6 +2,7 @@
   <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <slot>default content</slot>
+      <h1><slot name="header"></slot></h1>
       <div class="actions">
         <slot name="links"></slot>
       </div>
@@ -43,21 +44,21 @@ export default {
   font-style: normal;
 }
 .modal .actions {
-    margin-top: 20px;
-    text-align: center;
-    color: #743535;
-    font-weight: bold;
-    font-style: italic;
-    display: flex;
-    flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+  color: #743535;
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
 }
 .modal .actions a {
-    color: #743535;
-    padding: 8px;
-    border: 1px solid #743535;
-    border-radius: 4px;
-    text-decoration: none;
-    margin: 10px;
+  color: #743535;
+  padding: 8px;
+  border: 1px solid #743535;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 10px;
 }
 .sale {
   background: crimson;
