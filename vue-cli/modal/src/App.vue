@@ -3,11 +3,17 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
   <h3>{{ names }}</h3>
+  <Modal />
 </template>
 
 <script>
+import Modal from "./components/Modal.vue";
+
 export default {
   name: "App",
+  components: {
+    Modal,
+  },
   data() {
     return {
       title: "Hello World suppppp",
