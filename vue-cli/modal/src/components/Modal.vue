@@ -1,11 +1,17 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-      <h1>Modal Window</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="modal" :class="{ sale: theme === 'sale' }">
+      <h1>{{ header }}</h1>
+      <p>{{ content }}</p>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["header", "content", "theme"],
+};
+</script>
 
 <style>
 .modal {
@@ -28,5 +34,14 @@
 }
 .modal p {
   font-style: normal;
+}
+.sale {
+  background: crimson;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.sale h1 {
+  color: white;
 }
 </style>

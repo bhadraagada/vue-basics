@@ -3,7 +3,7 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
   <h3>{{ names }}</h3>
-  <Modal />
+  <Modal :header="header" :content="content" theme="sale" />
 </template>
 
 <script>
@@ -18,6 +18,8 @@ export default {
     return {
       title: "Hello World suppppp",
       names: null,
+      header: "Sign up for the formula one watch party",
+      content: "Beligum GP",
     };
   },
   methods: {
