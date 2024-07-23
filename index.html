@@ -1,8 +1,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VueJS</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
@@ -11,15 +11,30 @@
     <h1>vueeeeeeeeeeeeee</h1>
 
     <div id="app">
-        <h2>{{ title }}</h2>
-        <h3>{{ driver1 }}</h3>
-        <h3>{{ driver2 }}</h3>
-        <h4>{{ points }}</h4>
+        <button @click="toggleShow">
+            <!-- v-if will completely remove the element from the DOM completely -->
+            <span v-if="showDets">Hide Details</span>
+            <!-- <span v-if="!showDets">Show Details</span>   -->
+            <!-- OR  -->
+            <span v-else>Show Details</span>
+        </button><br /><br>
 
-        <button v-on:click="points++">Increment the points</button><br>
+        <!-- v-show does achevie this using css by hiding the div -->
+        <div v-show="showDets">Currently showing the details</div>
+
+        <div v-if="showDets">
+            <h2>{{ title }}</h2>
+            <h3>{{ driver1 }}</h3>
+            <h3>{{ driver2 }}</h3>
+            <h4>{{ points }}</h4>
+        </div>
+
+        <button v-on:click="points++">Increment the points</button><br />
         <button v-on:click="points--">Decrement the points</button>
 
-        <div @click="changeDriver('Lewis')"><button>change the driver plssssss</button></div>
+        <div @click="changeDriver('Lewis')">
+            <button>change the driver plssssss</button>
+        </div>
     </div>
 
     <script src="app.js"></script>
