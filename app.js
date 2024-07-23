@@ -2,10 +2,11 @@ const app = Vue.createApp({
   data() {
     return {
       showDets: true,
-      title: "Red Bull Racing",
-      driver1: "Max Verstappen",
-      driver2: "Sergio Perez",
-      points: 60,
+      drivers: [
+        {team: "Red Bull", driver1: "Max Verstappen", driver2: "Sergio Perez", points: 69},
+        {team: "Ferrari", driver1: "Charles Leclerc", driver2: "Carlos Sainz", points: 68},
+        {team: "Mercedes", driver1: "Lewis Hamilton", driver2: "George Russell", points: 45},
+      ],
       x: 0,
       y: 0,
     };

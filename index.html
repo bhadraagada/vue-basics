@@ -1,60 +1,73 @@
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VueJS</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
-      .box {
-        padding: 100px 0;
-        width: 400px;
-        text-align: center;
-        background: #ddd;
-        margin: 20px;
-        display: inline-block;
-      }
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <h1>vueeeeeeeeeeeeee</h1>
 
     <div id="app">
-      <button @click="toggleShow">
-        <!-- v-if will completely remove the element from the DOM completely -->
-        <span v-if="showDets">Hide Details</span>
-        <!-- <span v-if="!showDets">Show Details</span>   -->
-        <!-- OR  -->
-        <span v-else>Show Details</span></button
-      ><br /><br />
+        <button @click="toggleShow">
+            <!-- v-if will completely remove the element from the DOM completely -->
+            <span v-if="showDets">Hide Details</span>
+            <!-- <span v-if="!showDets">Show Details</span>   -->
+            <!-- OR  -->
+            <span v-else>Show Details</span></button><br /><br />
 
-      <!-- v-show does achevie this using css by hiding the div -->
-      <div v-show="showDets">Currently showing the details</div>
+        <!-- v-show does achevie this using css by hiding the div -->
+        <div v-show="showDets">Currently showing the details</div>
 
-      <div v-if="showDets">
-        <h2>{{ title }}</h2>
-        <h3>{{ driver1 }}</h3>
-        <h3>{{ driver2 }}</h3>
-        <h4>{{ points }}</h4>
-        </p>
-      </div>
+        <div v-if="showDets">
+            <!-- <h2>{{ drivers[0].team }}</h2>
+            <h3>{{ drivers[0].driver1 }}</h3>
+            <h3>{{ drivers[0].driver2 }}</h3>
+            <h4>{{ drivers[0].points }}</h4>
+            <h2>{{ drivers[1].team }}</h2>
+            <h3>{{ drivers[1].driver1 }}</h3>
+            <h3>{{ drivers[1].driver2 }}</h3>
+            <h4>{{ drivers[1].points }}</h4> -->
+            <!-- not an ideal way to display data instead we use v-for -->
+            <ul>
+                <li v-for="i in drivers" style="list-style: none">
+                    <h2>{{ i.team }}</h2>
+                    <h3>{{ i.driver1 }}</h3>
+                    <h3>{{ i.driver2 }}</h3>
+                    <h4>{{ i.points }}</h4>
+                </li>
+            </ul>
+        </div>
 
-      <button v-on:click="points++">Increment the points</button><br />
-      <button v-on:click="points--">Decrement the points</button>
+        <button v-on:click="points++">Increment the points</button><br />
+        <button v-on:click="points--">Decrement the points</button>
 
-      <div @click="changeDriver('Lewis')">
-        <button>change the driver plssssss</button>
-      </div>
+        <div @click="changeDriver('Lewis')">
+            <button>change the driver plssssss</button>
+        </div>
 
-      <!-- mouse events -->
-      <div class="box" @mouseover="handleEvent($event, 'bruvvvvvv')">
-        mouse over
-      </div>
-      <div class="box" @mouseleave="handleEvent">mouse leaving</div>
-      <div class="box" @dblclick="handleEvent">double click</div>
-      <div class="box" @mousemove="handleMouse">{{ x }} {{ y }}</div>
+        <!-- mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 'bruvvvvvv')">
+            mouse over
+        </div>
+        <div class="box" @mouseleave="handleEvent">mouse leaving</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMouse">{{ x }} {{ y }}</div>
     </div>
 
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
