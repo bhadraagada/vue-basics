@@ -3,7 +3,10 @@
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
   <h3>{{ names }}</h3>
-  <Modal :header="header" :content="content" theme="sale" />
+  <div v-if="showModal">
+    <Modal :header="header" :content="content" theme="sale" @close="toggleModal"/>
+  </div>
+  <button @click="toggleModal">Show Modal</button>
 </template>
 
 <script>
@@ -20,6 +23,7 @@ export default {
       names: null,
       header: "Sign up for the formula one watch party",
       content: "Beligum GP",
+      showModal: false,
     };
   },
   methods: {
@@ -28,6 +32,9 @@ export default {
       this.$refs.name.classList.add("active");
       this.$refs.name.focus();
       this.names = this.$refs.name.value;
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
