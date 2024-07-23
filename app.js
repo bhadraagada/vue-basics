@@ -1,11 +1,12 @@
 const app = Vue.createApp({
   data() {
     return {
+      url: "https://www.youtube.com",
       showDets: true,
       drivers: [
-        {team: "Red Bull", driver1: "Max Verstappen", driver2: "Sergio Perez", points: 69},
-        {team: "Ferrari", driver1: "Charles Leclerc", driver2: "Carlos Sainz", points: 68},
-        {team: "Mercedes", driver1: "Lewis Hamilton", driver2: "George Russell", points: 45},
+        {image: 'assets/red bull.avif', team: "Red Bull", driver1: "Max Verstappen", driver2: "Sergio Perez", points: 69},
+        {image: 'assets/ferrari.avif', team: "Ferrari", driver1: "Charles Leclerc", driver2: "Carlos Sainz", points: 68},
+        {image: 'assets/mercedes.avif', team: "Mercedes", driver1: "Lewis Hamilton", driver2: "George Russell", points: 45},
       ],
       x: 0,
       y: 0,
