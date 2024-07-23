@@ -4,7 +4,12 @@
   <button @click="handleClick">click me</button>
   <h3>{{ names }}</h3>
   <div v-if="showModal">
-    <Modal :header="header" :content="content" theme="sale" @close="toggleModal"/>
+    <Modal
+      :header="header"
+      :content="content"
+      theme="sale"
+      @close="toggleModal"
+    />
   </div>
   <button @click="toggleModal">Show Modal</button>
 </template>
