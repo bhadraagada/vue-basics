@@ -61,6 +61,7 @@
             v-for="i in drivers"
             style="list-style: none"
             :class="{ fav: i.isFav }"
+            @click="toggleFav(i)"
           >
             <img
               :src="i.image"

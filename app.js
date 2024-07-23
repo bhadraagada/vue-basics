@@ -50,6 +50,9 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
     },
+    toggleFav(i) {
+      i.isFav = !i.isFav;
+    }
   },
 });
 
