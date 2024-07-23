@@ -18,7 +18,7 @@ const app = Vue.createApp({
           driver1: "Charles Leclerc",
           driver2: "Carlos Sainz",
           points: 68,
-          isFav: true
+          isFav: false
         },
         {
           image: "assets/mercedes.avif",
@@ -26,7 +26,7 @@ const app = Vue.createApp({
           driver1: "Lewis Hamilton",
           driver2: "George Russell",
           points: 45,
-          isFav: false
+          isFav: true
         },
       ],
       x: 0,
@@ -54,6 +54,11 @@ const app = Vue.createApp({
       i.isFav = !i.isFav;
     }
   },
+  computed: {
+    filteredDrivers() {
+      return this.drivers.filter((i) => i.isFav);
+    }
+  }
 });
 
 app.mount("#app");

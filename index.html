@@ -30,6 +30,10 @@
     <h1>vueeeeeeeeeeeeee</h1>
 
     <div id="app">
+      <!-- computed property -->
+      <!-- <h1>{{ filteredDrivers }}</h1> -->
+
+
       <!-- attribute binding -->
       <!-- <a v-bind:href="url">YT</a><br><br> -->
       <!-- also written as -->
@@ -58,7 +62,7 @@
         <!-- not an ideal way to display data instead we use v-for -->
         <ul>
           <li
-            v-for="i in drivers"
+            v-for="i in filteredDrivers "
             style="list-style: none"
             :class="{ fav: i.isFav }"
             @click="toggleFav(i)"
