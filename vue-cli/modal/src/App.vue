@@ -1,5 +1,8 @@
 <template>
   <h1>{{ title }}</h1>
+  <input type="text" ref="name" />
+  <button @click="handleClick">click me</button>
+  <h3>{{ names }}</h3>
 </template>
 
 <script>
@@ -7,9 +10,18 @@ export default {
   name: "App",
   data() {
     return {
-      title: "Hello World suppppp"
-    }
-  }
+      title: "Hello World suppppp",
+      names: null,
+    };
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name.value);
+      this.$refs.name.classList.add("active");
+      this.$refs.name.focus();
+      this.names = this.$refs.name.value;
+    },
+  },
 };
 </script>
 
