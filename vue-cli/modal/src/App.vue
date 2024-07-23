@@ -4,12 +4,16 @@
   <button @click="handleClick">click me</button>
   <h3>{{ names }}</h3>
   <div v-if="showModal">
-    <Modal
-      :header="header"
-      :content="content"
-      theme="sale"
-      @close="toggleModal"
-    />
+    <Modal theme="sale" @close="toggleModal">
+      <!-- <h1>Sign up for the formula one watch party</h1>
+      <p>Beligum GP</p> -->
+      <h1>{{ header }}</h1>
+      <p>{{ content }}</p>
+      <template v-slot:links>
+        <a href="#">sign up link</a> <br />
+        <a href="#">info of belgium gp</a>
+      </template>
+    </Modal>
   </div>
   <button @click="toggleModal">Show Modal</button>
 </template>
