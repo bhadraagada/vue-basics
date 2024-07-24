@@ -1,28 +1,30 @@
 <template>
-  <h1>{{ title }}</h1>
-  <input type="text" ref="name" />
-  <button @click="handleClick">click me</button>
-  <h3>{{ names }}</h3>
-  <div v-if="showModal">
-    <Modal theme="sale" @close="toggleModal">
-      <!-- <h1>Sign up for the formula one watch party</h1>
+  <div>
+    <h1>{{ title }}</h1>
+    <input type="text" ref="name" />
+    <button @click="handleClick">click me</button>
+    <h3>{{ names }}</h3>
+    <div v-if="showModal">
+      <Modal theme="sale" @close="toggleModal">
+        <!-- <h1>Sign up for the formula one watch party</h1>
       <p>Beligum GP</p> -->
-      <h1>{{ header }}</h1>
-      <p>{{ content }}</p>
-      <template v-slot:links>
-        <a href="#">sign up link</a> <br />
-        <a href="#">info of belgium gp</a>
-      </template>
-    </Modal>
+        <h1>{{ header }}</h1>
+        <p>{{ content }}</p>
+        <template v-slot:links>
+          <a href="#">sign up link</a> <br />
+          <a href="#">info of belgium gp</a>
+        </template>
+      </Modal>
+    </div>
+    <div v-if="showModal2">
+      <Modal @close="toggleModal2">
+        <h1>{{ header1 }}</h1>
+        <p>{{ content2 }}</p>
+      </Modal>
+    </div>
+    <button @click="toggleModal">Show Modal</button>
+    <button @click="toggleModal2">Show Modal 2</button>
   </div>
-  <div v-if="showModal2">
-    <Modal @close="toggleModal2">
-      <h1>{{ header1 }}</h1>
-      <p>{{ content2 }}</p>
-    </Modal>
-  </div>
-  <button @click="toggleModal">Show Modal</button>
-  <button @click="toggleModal2">Show Modal 2</button>
 </template>
 
 <script>
