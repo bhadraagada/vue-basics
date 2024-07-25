@@ -18,14 +18,15 @@
   </div> -->
   <div>
     <h1>Home</h1>
-    <input type="text" v-model="search">
-    <p>searching for - {{search }}</p>
+    <input type="text" v-model="search" />
+    <p>searching for - {{ search }}</p>
     <div v-for="name in matchingNames" :key="name">{{ name }}</div>
+    <button @click="handleClick">Stop</button>
   </div>
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, ref, watch, watchEffect } from "vue";
 
 export default {
   name: "Home",
@@ -70,11 +71,24 @@ export default {
       "toad",
     ]);
 
-    const matchingNames = computed(() => {
-      return names.value.filter((name) => name.includes(search.value));
+    const stopWatch = watch(search, () => {
+      console.log('watch function raning')
     })
 
-    return { names, search, matchingNames };
+    const stopEffect = watchEffect(() => {
+      console.log('watch effect raning', search.value)
+    })
+
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value));
+    });
+
+    const handleClick = () => {
+      stopWatch();
+      stopEffect();
+    }
+
+    return { names, search, matchingNames, handleClick, stopWatch, stopEffect };
   },
 };
 </script>
