@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "json-server",
+        "mock-server",
+        "api-server",
+        "rest-server"
+      ]
+    }, 
+    {
+      "id": 2,
+      "title": "vue",
+      "author": "typicode",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "tags": [
+        "vue",
+        "vue-router",
+        "vuex",
+        "vuex-router-sync"
+      ]
+    }
+  ]
+}

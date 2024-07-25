@@ -1,0 +1,52 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Google",
+      "location": "Mountain View, CA",
+      "salary": "100,000",
+      "description": "Frontend Developer at Google"
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer",
+      "company": "Facebook",
+      "location": "Menlo Park, CA",
+      "salary": "120,000",
+      "description": "Backend Developer at Facebook"
+    },
+    {
+      "id": 3,
+      "title": "Fullstack Developer",
+      "company": "Amazon",
+      "location": "Seattle, WA",
+      "salary": "110,000",
+      "description": "Fullstack Developer at Amazon"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "user1"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "user2"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Blog 1",
+      "content": "Content of blog 1"
+    },
+    {
+      "id": 2,
+      "title": "Blog 2",
+      "content": "Content of blog 2"
+    }
+  ]
+}
