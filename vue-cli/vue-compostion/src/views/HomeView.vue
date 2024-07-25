@@ -1,31 +1,80 @@
 <template>
-  <div class="home">
+  <!-- <div class="home">
     Home
     <p>name: {{ name }}</p>
     <p ref="p">age: {{ age }}</p>
     <button @click="handleClick">Click me </button>
     <button @click="age++">Add age</button>
     <input type="text" v-model="name">
+  </div> -->
+  <!-- <div class="home">
+    <h1>Home</h1>
+    <h2>Refs</h2>
+    <p>{{ bhadra.name }} - {{ bhadra.age }}</p>
+    <button @click="updateBhadra">Update</button>
+    <h2>Reactive</h2>
+    <p>{{ bhadraTwo.name }} - {{ bhadraTwo.age }}</p>
+    <button @click="updateBhadraTwo">Update</button>
+  </div> -->
+  <div>
+    <h1>Home</h1>
+    <input type="text" v-model="search">
+    <p>searching for - {{search }}</p>
+    <div v-for="name in matchingNames" :key="name">{{ name }}</div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export default {
   name: "Home",
+  // setup() {
+  //   const p = ref("hello");
+
+  //   const name = ref("bhadra");
+  //   const age = ref(19);
+
+  //   const handleClick = () => {
+  //     name.value = "kumar";
+  //     age.value = 20;
+  //   };
+
+  //   return { name, age, handleClick, p };
+  // },
+
+  // setup() {
+  //   const bhadra = ref({ name: "kumar", age: 20 });
+  //   const bhadraTwo = reactive({ name: "kumari", age: 30 });
+
+  //   const updateBhadra = () => {
+  //     bhadra.value.age = 21;
+  //   };
+
+  //   const updateBhadraTwo = () => {
+  //     bhadraTwo.age = 21;
+  //   };
+
+  //   return { bhadra, updateBhadra, bhadraTwo, updateBhadraTwo };
+  // },
+
   setup() {
-    const p = ref("hello");
+    const search = ref("");
+    const names = ref([
+      "bhadra",
+      "kumar",
+      "kumari",
+      "rahul",
+      "sachin",
+      "yoshi",
+      "toad",
+    ]);
 
-    const name = ref("bhadra");
-    const age = ref(19);
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value));
+    })
 
-    const handleClick = () => {
-      name.value = "kumar";
-      age.value = 20;
-    };
-
-    return { name, age, handleClick, p };
+    return { names, search, matchingNames };
   },
 };
 </script>
